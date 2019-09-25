@@ -19,9 +19,11 @@ const forecast = (latitude, longitude, callback) => {
         else {
 
           // conversion to celsius
-          const tempInCelsius = (body.currently.temperature - 32) * (5/9)
+          const tempInCelsius = (body.currently.temperature - 32) * (5/9);
+          const dailyHigh = (body.daily.data[0].temperatureHigh - 32) * (5/9);
+          const dailyLow = (body.daily.data[0].temperatureLow - 32) * (5/9);
 
-          callback(undefined, body.daily.data[0].summary + " It is currently " + tempInCelsius.toFixed(2) + " degrees Celsius. There is a " + body.currently.precipProbability + "% of rain.");
+          callback(undefined, body.daily.data[0].summary + " It is currently " + tempInCelsius.toFixed(2) + " degrees Celsius. There is a " + body.currently.precipProbability + "% of rain. The daily high temperature is " + dailyHigh.toFixed(2) + " degrees and the daily low temperature is " + dailyLow.toFixed(2) + " degrees. Weekly forecast: " + body.daily.summary);
 
         }
     });
