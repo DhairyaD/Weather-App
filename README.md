@@ -1,3 +1,3 @@
 # Weather-App
 
-Visit: [Weather-App] (https://dhairya-weather-app.herokuapp.com/)
+Visit the app using -- https://dhairya-weather-app.herokuapp.com/
